@@ -1,0 +1,62 @@
+.my-orders {
+  margin: 50px 0;
+}
+
+.my-orders .orders-container {
+  max-width: 900px;
+  margin: 30px auto;            /* centers the block but not text */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Make each order row aligned and left */
+.my-orders-order {
+  display: grid;
+  grid-template-columns: 60px 1fr 100px 80px 140px 110px;
+  align-items: center;
+  column-gap: 16px;
+  font-size: 14px;
+  padding: 10px 16px;
+  color: #454545;
+  border: 1px solid tomato;
+}
+
+/* Ensure text is left-aligned even if a parent sets text-align:center */
+.my-orders-order p {
+  margin: 0;
+  text-align: left;
+}
+
+.my-orders-order img {
+  width: 50px;
+}
+
+.my-orders-order p span {
+  color: tomato;
+}
+
+.my-orders-order p b {
+  font-weight: 500;
+  color: #454545;
+}
+
+.my-orders-order button {
+  border: none;
+  padding: 12px 0;
+  border-radius: 4px;
+  background-color: #ffe1e1;
+  cursor: pointer;
+  color: #454545;
+}
+
+@media (max-width: 900px) {
+  .my-orders-order {
+    grid-template-columns: 1fr 2fr 1fr;
+    row-gap: 8px;
+    font-size: 12px;
+  }
+  .my-orders-order button {
+    font-size: 10px;
+  }
+}
