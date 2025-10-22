@@ -16,7 +16,7 @@ app.use(express.json());
 
 const allowed = (
   process.env.FRONTEND_URLS ||
-  "http://localhost:3000,https://cravery-eight.vercel.app"
+  "http://localhost:5173,https://cravery-eight.vercel.app"
 )
   .split(",")
   .map((s) => s.trim())

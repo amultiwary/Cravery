@@ -6,7 +6,7 @@ const Verify = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [status, setStatus] = useState("Verifying...");
-
+  const url=import.meta.env.VITE_URL;
   const query = new URLSearchParams(location.search);
   const orderId = query.get("orderId");
   const payment_id = query.get("payment_id");
@@ -16,7 +16,7 @@ const Verify = () => {
   useEffect(() => {
     const verifyPayment = async () => {
       try {
-        const res = await axios.post("http://localhost:4000/api/order/verify", {
+        const res = await axios.post(`${url}/api/order/verify`, {
           orderId,
           razorpay_payment_id: payment_id,
           razorpay_order_id,
